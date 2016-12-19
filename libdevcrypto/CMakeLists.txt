@@ -15,6 +15,9 @@ target_include_directories(devcrypto PRIVATE ../utils)
 target_link_libraries(devcrypto ${Dev_DEVCORE_LIBRARIES})
 target_link_libraries(devcrypto ${Utils_SCRYPT_LIBRARIES})
 
+target_include_directories(devcrypto PRIVATE /usr/local/include/libsnark)
+target_link_libraries(devcrypto /usr/local/lib/libsnark.so)
+
 if (NOT EMSCRIPTEN)
 	target_link_libraries(devcrypto ${Utils_SECP256K1_LIBRARIES})
 endif ()
